@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="NuimoDemoApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,10,0,0">
+        <RelativePanel Margin="0,10,0,0">
+            <ComboBox Name ="PairedNuimosComboBox"  Margin="95,10,-236,0" Height="35" Width="245" SelectionChanged="PairedNuimosComboBox_OnSelectionChanged" HorizontalAlignment="Center"></ComboBox>
+            <Button x:Name = "ReloadButton"  Content="Reload" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="87" Margin="345,13,-380.333,-13" Click="ReloadButton_OnClick" RenderTransformOrigin="3.015,0"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Connection State:" VerticalAlignment="Top" Width="97" Margin="95,50,-130,-56" FontSize="11"/>
+            <TextBlock x:Name="ConnectionStateTextBlock" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Disconnected" VerticalAlignment="Top" Width="81" Margin="192,50,-202,-14" FontSize="11"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Battery Percentage:" VerticalAlignment="Top" Width="97" Margin="95,66,-130,-56" FontSize="11"/>
+            <TextBlock x:Name="BatteryPercentageTextBlock" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="N.A." VerticalAlignment="Top" Width="42" Margin="192,66,-162.8,-14" FontSize="11"/>
+            <Button x:Name="ConnectButton" Content="Connect to Nuimo" HorizontalAlignment="Center" Margin="289,50,-270,18" VerticalAlignment="Center" Click="ConnectButton_OnClick" IsEnabled="False"/>
+            <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Height="175" VerticalAlignment="Top" Width="337" RenderTransformOrigin="1.774,9.9" TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" Margin="95,90,-95,-106" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <CheckBox x:Name ="FadeTransitionCheckBox"  Content="with fade transition" HorizontalAlignment="Stretch" Height="32" VerticalAlignment="Top" Margin="314,284,-314,-284" FontSize="13" RenderTransformOrigin="0.302,1.125"/>
+            <CheckBox x:Name="WithoutWriteResponseCheckBox" Content="without write response" HorizontalAlignment="Stretch" Height="32" VerticalAlignment="Top" Margin="314,324,-314,-324" RenderTransformOrigin="-0.65,0.469" FontSize="13"/>
+            <TextBox x:Name="DisplayIntervalTextBox" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Margin="314,361,-287,-332" AcceptsReturn="False" MaxLength="4"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Text="Seconds" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Margin="383,365,-399,-361" RenderTransformOrigin="0.449,2.2"/>
+        </RelativePanel>
+        <Grid x:Name="LedGrid" HorizontalAlignment="Left" Height="223" Margin="100,292,0,0" VerticalAlignment="Top" Width= "199" RenderTransformOrigin="0.58,0.203" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Button x:Name="DisplayButton" Content="&#xD;&#xA;Send matrix &#xA;" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="106" Click="DisplayMatrix_OnClick" FontSize="13" Margin="304,445,0,0" RenderTransformOrigin="0.519,0.153"/>
+    </Grid>
+</Page>
